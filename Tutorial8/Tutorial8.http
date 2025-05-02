@@ -1,6 +1,34 @@
 @Tutorial8_HostAddress = http://localhost:5128
 
-GET {{Tutorial8_HostAddress}}/weatherforecast/
+### 1. GET all trips
+GET http://localhost:5128/api/trips
 Accept: application/json
 
-###
+
+### 2. GET trips for a specific client 
+GET http://localhost:5128/api/clients/1/trips
+Accept: application/json
+
+
+### 3. POST add new client
+POST http://localhost:5128/api/clients
+Content-Type: application/json
+
+{
+  "FirstName": "Anna",
+  "LastName": "Kowalska",
+  "Email": "anna.kowal@example.com",
+  "Telephone": "123456381",
+  "Pesel": "12345555556"
+}
+
+
+### 4. PUT register client to trip (replace IDs accordingly)
+PUT http://localhost:5128/api/clients/1/trips/2
+Accept: application/json
+
+
+### 5. DELETE remove client from trip (replace IDs accordingly)
+DELETE http://localhost:5128/api/clients/1/trips/2
+Accept: application/json
+
